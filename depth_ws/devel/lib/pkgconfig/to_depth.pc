@@ -1,1 +1,8 @@
+prefix=/home/acl/depth_ws/devel
 
+Name: to_depth
+Description: Description of to_depth
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/acl/depth_ws/devel/lib 
+Requires: 
