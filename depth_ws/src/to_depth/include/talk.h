@@ -6,10 +6,9 @@
 
 
 // #include <apriltags2_ros/AprilTagDetectionArray.h>
-
-#include <geometry_msgs/PoseStamped.h>
+#include <sensor_msgs/CameraInfo.h>
 //#include <AprilTagDetectionArray.h>
-
+#include <geometry_msgs/PoseStamped.h>
 
 
 
