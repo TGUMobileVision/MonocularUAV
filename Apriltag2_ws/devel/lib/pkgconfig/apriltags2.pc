@@ -1,0 +1,8 @@
+prefix=/home/nuc/Apriltag2_ws/devel
+
+Name: apriltags2
+Description: Description of apriltags2
+Version: 0.9.8
+Cflags: -I/home/nuc/Apriltag2_ws/src/Apriltags2_VO/apriltags2/include
+Libs: -L/home/nuc/Apriltag2_ws/devel/lib -lapriltags2
+Requires: 

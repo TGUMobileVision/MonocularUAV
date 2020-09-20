@@ -1,0 +1,2 @@
+to_depth
+-DCATKIN_DEVEL_PREFIX=/home/nuc/depth_ws/devel -DCMAKE_INSTALL_PREFIX=/home/nuc/depth_ws/install -G Unix Makefiles

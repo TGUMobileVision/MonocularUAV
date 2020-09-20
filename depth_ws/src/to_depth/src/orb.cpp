@@ -53,7 +53,7 @@ int main(int argc, char **argv)
 
 
     // 设置循环的频率
-    ros::Rate loop_rate(10);
+    ros::Rate loop_rate(50);
 
     double count = 0.0;
     while (ros::ok())
@@ -79,21 +79,22 @@ int main(int argc, char **argv)
 
         //下面是求相机到无人机机体的变化矩阵的过程
         //过程是：知道机体到相机的旋转矩阵和平移向量，这就知道机体到相机的T1,so相机到机体的T2等于T1的逆矩阵
-        Eigen::Matrix3d R_BtoC;//机体到相机的旋转矩阵
-        R_BtoC << 0,  -1,   0,
-                  0,   0,  -1,
-                  1,   0,   0;
-        Eigen::Vector3d t_BtoC(1,0,0);//机体到相机的平移向量  ??????????????????????????????????
-        Eigen::MatrixXd T_BtoC_p(3,4);//先创建一个3*4的矩阵，里面只包括R和t，
-        T_BtoC_p.block(0,0,3,3) = R_BtoC;//前3*3是旋转矩阵
-        T_BtoC_p.col(3) = t_BtoC;//将机体到相机的t赋值给T_BtoC的第四列
-        Eigen::MatrixXd T_BtoC(4,4);//机体到相机的矩阵变换
-        T_BtoC.block(0,0,3,4) = T_BtoC_p;
-        T_BtoC.row(3) = r;
+        Eigen::Matrix3d R_CtoB;//机体到相机的旋转矩阵
+        R_CtoB << 0,   0,   1,
+                 -1,   0,   0,
+                  0,  -1,   0;
+        Eigen::Vector3d t_CtoB(0.145,0.05,0.04);//机体到相机的平移向量  ??????????????????????????????????
+        Eigen::MatrixXd T_CtoB_p(3,4);//先创建一个3*4的矩阵，里面只包括R和t，
+        T_CtoB_p.block(0,0,3,3) = R_CtoB;//前3*3是旋转矩阵
+        T_CtoB_p.col(3) = t_CtoB;//将机体到相机的t赋值给T_BtoC的第四列
+        Eigen::MatrixXd T_CtoB(4,4);//机体到相机的矩阵变换
+        T_CtoB.block(0,0,3,4) = T_CtoB_p;
+        T_CtoB.row(3) = r;
         // cout << "机体到相机的变换矩阵T_BtoC为"<< endl <<  T_BtoC << endl;
-        Eigen::Matrix4d T_CtoB;//相机到机体的旋转矩阵
-        T_CtoB = T_BtoC.inverse();
+        Eigen::Matrix4d T_BtoC;//相机到机体的旋转矩阵
+        T_BtoC = T_CtoB.inverse();
         // cout << "相机到机体的变换矩阵T_CtoB为"<< endl <<  T_CtoB << endl;
+
         
         //下面是求无人机位姿的过程
         Eigen::Matrix4d T_drone;

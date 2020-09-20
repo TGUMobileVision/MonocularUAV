@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nuc/ORB_SLAM2/devel/setup.sh

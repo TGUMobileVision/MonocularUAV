@@ -6,6 +6,33 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "talk.h"
+#include <iostream>
+using namespace std;
+
+struct Rotation_matrix
+{
+  double x;
+  double y;
+  double z;
+  /* data */
+};
+Rotation_matrix tag_R , orb_R ;
+
+struct Translation_vector
+{
+  double x;
+  double y;
+  double z;
+  double w;
+  /* data */
+};
+Translation_vector tag_T , orb_T ;
+
+
+
+
+
+
 
 int main(int argc, char **argv)
 {
@@ -15,8 +42,8 @@ int main(int argc, char **argv)
   // 创建节点句柄
   ros::NodeHandle nh;
   
-  //ros::Subscriber tagSub = nh.subscribe("/tag_detections", 10, &tag_callback);//订阅AprilTag的话题
-  ros::Subscriber orbSub = nh.subscribe("/posestamped", 10, &orb_callback);//订阅AprilTag的话题
+  ros::Subscriber tag_Sub = nh.subscribe("/tag_Odometry", 10, &tag_callback);//订阅AprilTag的话题
+  ros::Subscriber orb_Sub = nh.subscribe("/posestamped", 10, &orb_callback);//订阅AprilTag的话题
 
 
   // 创建一个Publisher，发布名为chatter的topic，消息类型为std_msgs::String
@@ -49,15 +76,15 @@ int main(int argc, char **argv)
   return 0;
 }
 
-/*
-void tag_callback(const apriltags2_ros::AprilTagDetectionArray::ConstPtr &msg)
+
+void tag_callback(const nav_msgs::Odometry::ConstPtr &msg)
 {
-  //flight_status = msg->data;
+  // flight_status = msg->data;
 }
-*/
+
 void orb_callback(const geometry_msgs::PoseStamped::ConstPtr &msg)
 {
- // flight_status = msg->data;
+  // flight_status = msg->data;
 }
 
 
