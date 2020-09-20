@@ -1,5 +1,5 @@
 # MonocularUAV
-An extensible framework of monocular SLAM with depth recovery for UAV
+An extensible framework of monocular SLAM with depth recovery for UAV. 
 The depth_ws workspace has completed the task of solving the depth information of the monocular camera and publishing it to the UAV module. This is our innovation.
 
 This is the source code webpage of our latest work on MonocularUAV
