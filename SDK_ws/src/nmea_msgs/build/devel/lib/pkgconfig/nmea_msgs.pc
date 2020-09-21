@@ -1,0 +1,8 @@
+prefix=/home/nuc/SDK_ws/src/nmea_msgs/build/devel
+
+Name: nmea_msgs
+Description: Description of nmea_msgs
+Version: 1.1.0
+Cflags: -I/home/nuc/SDK_ws/src/nmea_msgs/build/devel/include
+Libs: -L/home/nuc/SDK_ws/src/nmea_msgs/build/devel/lib 
+Requires: std_msgs message_runtime

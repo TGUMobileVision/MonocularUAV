@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nuc/SDK_ws/src/nmea_msgs/build/devel/setup.sh
