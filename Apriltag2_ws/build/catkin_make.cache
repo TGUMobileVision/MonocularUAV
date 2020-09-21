@@ -1,2 +1,0 @@
-Apriltags2_VO/apriltags2:Apriltags2_VO/apriltags2_ros
--DCATKIN_DEVEL_PREFIX=/home/nuc/Apriltag2_ws/devel -DCMAKE_INSTALL_PREFIX=/home/nuc/Apriltag2_ws/install -G Unix Makefiles

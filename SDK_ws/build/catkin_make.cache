@@ -1,2 +1,0 @@
-Onboard-SDK-ROS/dji_sdk:Onboard-SDK-ROS/dji_sdk_demo:nmea_msgs
--DCATKIN_DEVEL_PREFIX=/home/nuc/SDK_ws/devel -DCMAKE_INSTALL_PREFIX=/home/nuc/SDK_ws/install -G Unix Makefiles

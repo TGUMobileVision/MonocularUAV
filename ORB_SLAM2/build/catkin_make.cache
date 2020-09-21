@@ -1,2 +1,0 @@
-
--DCATKIN_DEVEL_PREFIX=/home/nuc/ORB_SLAM2/devel -DCMAKE_INSTALL_PREFIX=/home/nuc/ORB_SLAM2/install -G Unix Makefiles
